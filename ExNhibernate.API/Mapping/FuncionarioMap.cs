@@ -12,7 +12,7 @@ namespace ExNhibernate.API.Mapping
         {
             Id(x => x.Id, x =>
             {
-                x.Generator(Generators.Increment);
+                x.Generator(Generators.Identity);
                 x.Type(NHibernateUtil.Int64);
                 x.Column("Id");
             });
@@ -29,7 +29,7 @@ namespace ExNhibernate.API.Mapping
             });
             Property(b => b.Salario, x =>
             {
-                x.Type(NHibernateUtil.Int32);
+                x.Type(NHibernateUtil.Double);
                 x.Scale(2);
                 x.Precision(10);
                 x.NotNullable(true);
